@@ -5,7 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://bsi2y7u3vmer5" path="res://assests/stationary.png" id="2_r32pp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sghoa"]
-size = Vector2(681, 65)
+size = Vector2(677, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfoqr"]
+size = Vector2(39, 37.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_56af7"]
 size = Vector2(39, 53)
@@ -17,16 +20,40 @@ size = Vector2(39, 53)
 [node name="StaticBody2D" type="StaticBody2D" parent="floor" unique_id=1283875190]
 position = Vector2(274, 472)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/StaticBody2D" unique_id=1973897309]
-position = Vector2(330.5, 22.5)
-shape = SubResource("RectangleShape2D_sghoa")
-
 [node name="ColorRect" type="ColorRect" parent="floor/StaticBody2D" unique_id=503591755]
 offset_left = -9.0
 offset_top = -11.0
 offset_right = 671.0
 offset_bottom = 55.0
 color = Color(0.3529412, 0.27450982, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/StaticBody2D" unique_id=1973897309]
+position = Vector2(329.5, 21)
+shape = SubResource("RectangleShape2D_sghoa")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="floor" unique_id=487992215]
+position = Vector2(734, 421)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/StaticBody2D2" unique_id=1890105333]
+position = Vector2(20.5, 21.25)
+shape = SubResource("RectangleShape2D_mfoqr")
+
+[node name="ColorRect" type="ColorRect" parent="floor/StaticBody2D2" unique_id=744203321]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 0.2784314, 0.11372549, 1)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="floor" unique_id=634119141]
+position = Vector2(250, 421)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/StaticBody2D3" unique_id=1236582546]
+position = Vector2(20.5, 21.25)
+shape = SubResource("RectangleShape2D_mfoqr")
+
+[node name="ColorRect" type="ColorRect" parent="floor/StaticBody2D3" unique_id=373114700]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 0.2784314, 0.11372549, 1)
 
 [node name="testplayer" type="CharacterBody2D" parent="." unique_id=1518127163]
 position = Vector2(643, 15)
@@ -42,4 +69,4 @@ position = Vector2(-1.5, 4.5)
 shape = SubResource("RectangleShape2D_56af7")
 
 [node name="windguy" parent="." unique_id=1629842383 instance=ExtResource("1_7y2xs")]
-position = Vector2(357, 429)
+position = Vector2(357, 372)
