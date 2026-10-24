@@ -9,6 +9,7 @@ func _physics_process(delta: float) -> void:
 	move_guy()
 	move_and_slide()
 	reverse_direction()
+	edge_space()
 
 func add_gravity(delta):
 	if not is_on_floor():
@@ -20,10 +21,16 @@ func move_guy():
 func reverse_direction():
 	if is_on_wall():
 		direction = -direction
+		$RayCast2D.position.x *= -1
 
+
+func edge_space():
+	if not $RayCast2D.is_colliding():
+		direction = -direction
+		$RayCast2D.position.x *= -1
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("ok soooo")
+	print("sooo okk")
 	if (body.name == "testplayer"):
 		print("heyyy")
 		var y_delta = position.y - body.position.y

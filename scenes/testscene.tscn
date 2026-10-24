@@ -1,17 +1,13 @@
 [gd_scene format=3 uid="uid://350x800b0ivm"]
 
 [ext_resource type="PackedScene" uid="uid://de0c85rcylfnt" path="res://scenes/windguy.tscn" id="1_7y2xs"]
-[ext_resource type="Script" uid="uid://csy1q25s18lqb" path="res://scripts/testplayer.gd" id="2_65iv0"]
-[ext_resource type="Texture2D" uid="uid://bsi2y7u3vmer5" path="res://assests/stationary.png" id="2_r32pp"]
+[ext_resource type="PackedScene" uid="uid://fk8v0yukssjm" path="res://scenes/testplayer.tscn" id="1_r32pp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sghoa"]
 size = Vector2(677, 66)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mfoqr"]
 size = Vector2(39, 37.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_56af7"]
-size = Vector2(39, 53)
 
 [node name="testscene" type="Node2D" unique_id=1440904098]
 
@@ -32,7 +28,7 @@ position = Vector2(329.5, 21)
 shape = SubResource("RectangleShape2D_sghoa")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="floor" unique_id=487992215]
-position = Vector2(734, 421)
+position = Vector2(642, 419)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor/StaticBody2D2" unique_id=1890105333]
 position = Vector2(20.5, 21.25)
@@ -42,9 +38,10 @@ shape = SubResource("RectangleShape2D_mfoqr")
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(1, 0.2784314, 0.11372549, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="floor" unique_id=634119141]
-position = Vector2(250, 421)
+position = Vector2(250, 339)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor/StaticBody2D3" unique_id=1236582546]
 position = Vector2(20.5, 21.25)
@@ -55,18 +52,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 color = Color(1, 0.2784314, 0.11372549, 1)
 
-[node name="testplayer" type="CharacterBody2D" parent="." unique_id=1518127163]
+[node name="testplayer" parent="." unique_id=2049056267 instance=ExtResource("1_r32pp")]
 position = Vector2(643, 15)
-collision_layer = 3
-collision_mask = 3
-script = ExtResource("2_65iv0")
-
-[node name="Sprite2D" type="Sprite2D" parent="testplayer" unique_id=1627782368]
-texture = ExtResource("2_r32pp")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="testplayer" unique_id=1517131018]
-position = Vector2(-1.5, 4.5)
-shape = SubResource("RectangleShape2D_56af7")
 
 [node name="windguy" parent="." unique_id=1629842383 instance=ExtResource("1_7y2xs")]
-position = Vector2(357, 372)
+position = Vector2(820, 366)
