@@ -1,3 +1,14 @@
 [gd_scene format=3 uid="uid://dfh3bgnggb0ep"]
 
+[ext_resource type="Script" uid="uid://bgxgnevmgh7t0" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://cnsc110rrn4go" path="res://assests/player.png.png" id="2_qhqgy"]
+
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1047740258]
+script = ExtResource("1_g2els")
+
+[node name="Player_png" type="Sprite2D" parent="." unique_id=492658294]
+position = Vector2(370, 145.5)
+scale = Vector2(5.1875, 4.96875)
+texture = ExtResource("2_qhqgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_png" unique_id=40475823]
