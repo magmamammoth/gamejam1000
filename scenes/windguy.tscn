@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://de0c85rcylfnt"]
+
+[ext_resource type="Texture2D" uid="uid://bsi2y7u3vmer5" path="res://assests/stationary.png" id="1_3cyof"]
+[ext_resource type="Script" uid="uid://di8kqxxx2q6t1" path="res://scripts/windguy.gd" id="1_e0rug"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0rug"]
+atlas = ExtResource("1_3cyof")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n5b4y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0rug")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gcaox"]
+size = Vector2(32, 46)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sghoa"]
+size = Vector2(52, 61)
+
+[node name="windguy" type="CharacterBody2D" unique_id=1629842383]
+script = ExtResource("1_e0rug")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=183636253]
+sprite_frames = SubResource("SpriteFrames_n5b4y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1528034502]
+position = Vector2(-1, 6)
+shape = SubResource("RectangleShape2D_gcaox")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=744084130]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2032140330]
+position = Vector2(-1, 4.5)
+shape = SubResource("RectangleShape2D_sghoa")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=131062691]
+position = Vector2(18, 17)
+target_position = Vector2(0, 17)
+collision_mask = 3
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

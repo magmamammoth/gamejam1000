@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://fk8v0yukssjm"]
+
+[ext_resource type="Script" uid="uid://csy1q25s18lqb" path="res://scripts/testplayer.gd" id="1_8girc"]
+[ext_resource type="Texture2D" uid="uid://bsi2y7u3vmer5" path="res://assests/stationary.png" id="2_s0ugw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56af7"]
+size = Vector2(39, 53)
+
+[node name="testplayer" type="CharacterBody2D" unique_id=2049056267]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_8girc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2094129133]
+texture = ExtResource("2_s0ugw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1644966743]
+position = Vector2(-1.5, 4.5)
+shape = SubResource("RectangleShape2D_56af7")

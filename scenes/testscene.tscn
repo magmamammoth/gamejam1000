@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://350x800b0ivm"]
+
+[ext_resource type="PackedScene" uid="uid://de0c85rcylfnt" path="res://scenes/windguy.tscn" id="1_7y2xs"]
+[ext_resource type="PackedScene" uid="uid://fk8v0yukssjm" path="res://scenes/testplayer.tscn" id="1_r32pp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sghoa"]
+size = Vector2(677, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mfoqr"]
+size = Vector2(39, 37.5)
+
+[node name="testscene" type="Node2D" unique_id=1440904098]
+
+[node name="floor" type="Node" parent="." unique_id=1453037722]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="floor" unique_id=1283875190]
+position = Vector2(274, 472)
+
+[node name="ColorRect" type="ColorRect" parent="floor/StaticBody2D" unique_id=503591755]
+offset_left = -9.0
+offset_top = -11.0
+offset_right = 671.0
+offset_bottom = 55.0
+color = Color(0.3529412, 0.27450982, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/StaticBody2D" unique_id=1973897309]
+position = Vector2(329.5, 21)
+shape = SubResource("RectangleShape2D_sghoa")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="floor" unique_id=487992215]
+position = Vector2(642, 419)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/StaticBody2D2" unique_id=1890105333]
+position = Vector2(20.5, 21.25)
+shape = SubResource("RectangleShape2D_mfoqr")
+
+[node name="ColorRect" type="ColorRect" parent="floor/StaticBody2D2" unique_id=744203321]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 0.2784314, 0.11372549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="floor" unique_id=634119141]
+position = Vector2(250, 339)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/StaticBody2D3" unique_id=1236582546]
+position = Vector2(20.5, 21.25)
+shape = SubResource("RectangleShape2D_mfoqr")
+
+[node name="ColorRect" type="ColorRect" parent="floor/StaticBody2D3" unique_id=373114700]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 0.2784314, 0.11372549, 1)
+
+[node name="testplayer" parent="." unique_id=2049056267 instance=ExtResource("1_r32pp")]
+position = Vector2(643, 15)
+
+[node name="windguy" parent="." unique_id=1629842383 instance=ExtResource("1_7y2xs")]
+position = Vector2(820, 366)
