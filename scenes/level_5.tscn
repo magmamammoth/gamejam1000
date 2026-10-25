@@ -183,4 +183,12 @@ position = Vector2(1045, 405)
 [node name="windguy15" parent="enemy" unique_id=637138434 instance=ExtResource("5_tbt7t")]
 position = Vector2(561, 161)
 
+[node name="Label" type="Label" parent="." unique_id=1694568764]
+offset_left = -6.0
+offset_top = 377.0
+offset_right = 278.0
+offset_bottom = 446.0
+theme_override_font_sizes/font_size = 50
+text = "BOSS FIGHT"
+
 [connection signal="body_entered" from="void" to="void" method="_on_body_entered"]

@@ -14,3 +14,4 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	print("strennngth")
 	player.JUMP_VELOCITY = -450
+	queue_free()

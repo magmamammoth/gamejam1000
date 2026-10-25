@@ -18,3 +18,7 @@ func _on_body_entered(body: Node2D) -> void:
 	print("coinnn")
 	queue_free()
 	gamemanager.count_score()
+
+
+func _on_portal_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://scenes/level_5.tscn")
+	get_tree().change_scene_to_file("res://scenes/_2.tscn")
