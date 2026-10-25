@@ -25,6 +25,7 @@ size = Vector2(32, 46)
 size = Vector2(52, 61)
 
 [node name="windguy" type="CharacterBody2D" unique_id=1629842383]
+collision_layer = 4
 script = ExtResource("1_e0rug")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=183636253]
@@ -35,7 +36,7 @@ position = Vector2(-1, 6)
 shape = SubResource("RectangleShape2D_gcaox")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=744084130]
-collision_mask = 2
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2032140330]
 position = Vector2(-1, 4.5)
@@ -44,6 +45,5 @@ shape = SubResource("RectangleShape2D_sghoa")
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=131062691]
 position = Vector2(18, 17)
 target_position = Vector2(0, 17)
-collision_mask = 3
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

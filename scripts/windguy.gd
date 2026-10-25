@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 50.0
-
+var collision_player: bool = false
 var direction = 1
 
 func _physics_process(delta: float) -> void:

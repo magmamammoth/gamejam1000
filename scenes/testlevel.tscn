@@ -1,18 +1,19 @@
 [gd_scene format=3 uid="uid://b5vwqdud51eod"]
 
 [ext_resource type="PackedScene" uid="uid://dfh3bgnggb0ep" path="res://scenes/player.tscn" id="1_mfx43"]
+[ext_resource type="PackedScene" uid="uid://de0c85rcylfnt" path="res://scenes/windguy.tscn" id="2_6ewva"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sghoa"]
 size = Vector2(1017, 73)
 
-[node name="testlevel" type="Node2D" unique_id=1565227902]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ewva"]
+size = Vector2(39, 37.5)
 
-[node name="CharacterBody2D" parent="." unique_id=1047740258 instance=ExtResource("1_mfx43")]
-position = Vector2(-0.33, 0)
-scale = Vector2(0.76, 0.76)
+[node name="testlevel" type="Node2D" unique_id=1565227902]
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=613141874]
 position = Vector2(85, 404)
+collision_mask = 0
 
 [node name="groundvis" type="ColorRect" parent="Ground" unique_id=35720904]
 offset_left = -38.0
@@ -24,3 +25,23 @@ color = Color(0.17385375, 0.5016835, 0.7367729, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=562250876]
 position = Vector2(473.5, 53.5)
 shape = SubResource("RectangleShape2D_sghoa")
+
+[node name="windguy" parent="." unique_id=1629842383 instance=ExtResource("2_6ewva")]
+position = Vector2(696, 388)
+
+[node name="CharacterBody2D" parent="." unique_id=1047740258 instance=ExtResource("1_mfx43")]
+position = Vector2(-0.33, 0)
+scale = Vector2(0.76, 0.76)
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1673552462]
+position = Vector2(247, 384)
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1013126357]
+position = Vector2(20.5, 21.25)
+shape = SubResource("RectangleShape2D_6ewva")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D3" unique_id=1924720650]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 0.2784314, 0.11372549, 1)
