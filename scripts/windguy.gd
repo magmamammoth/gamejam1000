@@ -37,7 +37,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		#print(y_delta)
 		if (y_delta < 15):
 			print("decrease health")
-			body.queue_free()
+			get_tree().reload_current_scene()
 		if (y_delta > 15):
 			print("dead")
 			queue_free()

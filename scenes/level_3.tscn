@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dfh3bgnggb0ep" path="res://scenes/player.tscn" id="4_ah8om"]
 [ext_resource type="PackedScene" uid="uid://cuhgtjqvfwxa2" path="res://scenes/gamemanager.tscn" id="5_ah8om"]
 [ext_resource type="PackedScene" uid="uid://dgsiixl7r48dj" path="res://scenes/speedcandy.tscn" id="6_p6vls"]
+[ext_resource type="Script" uid="uid://djatc47q1nkqo" path="res://scripts/void.gd" id="7_hhfj6"]
+[ext_resource type="PackedScene" uid="uid://bpgl85bd1xafc" path="res://scenes/portal.tscn" id="8_wae8j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h23n6"]
 texture = ExtResource("1_70nk6")
@@ -112,6 +114,8 @@ texture = ExtResource("1_70nk6")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_h23n6")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_56af7"]
+
 [node name="level3" type="Node" unique_id=913579418]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1669465213]
@@ -181,7 +185,7 @@ position = Vector2(1080, 535)
 position = Vector2(164, 462)
 
 [node name="player" parent="." unique_id=1047740258 instance=ExtResource("4_ah8om")]
-position = Vector2(45, 457)
+position = Vector2(-38, 359)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=929573474]
 zoom = Vector2(2.695, 2.695)
@@ -193,3 +197,16 @@ unique_name_in_owner = true
 
 [node name="speedcandy" parent="." unique_id=608320291 instance=ExtResource("6_p6vls")]
 position = Vector2(666, 393)
+
+[node name="void" type="Area2D" parent="." unique_id=1063095911]
+position = Vector2(422, 795)
+collision_mask = 2
+script = ExtResource("7_hhfj6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="void" unique_id=317563096]
+shape = SubResource("WorldBoundaryShape2D_56af7")
+
+[node name="portal" parent="." unique_id=1349451000 instance=ExtResource("8_wae8j")]
+position = Vector2(1333, 523)
+
+[connection signal="body_entered" from="void" to="void" method="_on_body_entered"]
