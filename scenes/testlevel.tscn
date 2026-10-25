@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://b5vwqdud51eod"]
 
-[ext_resource type="PackedScene" uid="uid://dfh3bgnggb0ep" path="res://scenes/player.tscn" id="1_w3snd"]
+[ext_resource type="PackedScene" uid="uid://dfh3bgnggb0ep" path="res://scenes/player.tscn" id="1_mfx43"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sghoa"]
 size = Vector2(1017, 73)
 
 [node name="testlevel" type="Node2D" unique_id=1565227902]
-position = Vector2(10, -12)
 
-[node name="CharacterBody2D" parent="." unique_id=1047740258 instance=ExtResource("1_w3snd")]
+[node name="CharacterBody2D" parent="." unique_id=1047740258 instance=ExtResource("1_mfx43")]
+position = Vector2(-0.33, 0)
+scale = Vector2(0.76, 0.76)
 
 [node name="Ground" type="StaticBody2D" parent="." unique_id=613141874]
 position = Vector2(85, 404)

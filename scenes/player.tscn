@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dfh3bgnggb0ep"]
 
-[ext_resource type="Script" uid="uid://bgxgnevmgh7t0" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://bgxgnevmgh7t0" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://cnsc110rrn4go" path="res://assests/player.png.png" id="2_qhqgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_japs5"]
@@ -13,6 +13,7 @@ script = ExtResource("1_g2els")
 position = Vector2(370, 145.5)
 scale = Vector2(5.1875, 4.96875)
 texture = ExtResource("2_qhqgy")
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=40475823]
 position = Vector2(370, 153)
