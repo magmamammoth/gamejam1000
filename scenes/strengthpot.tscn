@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://bw3d3gitvbuoe"]
+
+[ext_resource type="Texture2D" uid="uid://dgrk05pkkrng4" path="res://assests/platformer items - free assets/animated_items.png" id="1_57o3k"]
+[ext_resource type="Script" uid="uid://ca3emki2kdslm" path="res://scripts/strengthpot.gd" id="1_41786"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41786"]
+atlas = ExtResource("1_57o3k")
+region = Rect2(0, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhu30"]
+atlas = ExtResource("1_57o3k")
+region = Rect2(32, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rje5q"]
+atlas = ExtResource("1_57o3k")
+region = Rect2(64, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k5mk"]
+atlas = ExtResource("1_57o3k")
+region = Rect2(96, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjn2f"]
+atlas = ExtResource("1_57o3k")
+region = Rect2(128, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68gaa"]
+atlas = ExtResource("1_57o3k")
+region = Rect2(160, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70iqp"]
+atlas = ExtResource("1_57o3k")
+region = Rect2(192, 288, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dndun"]
+atlas = ExtResource("1_57o3k")
+region = Rect2(224, 288, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sghoa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41786")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhu30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rje5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k5mk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjn2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68gaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_70iqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dndun")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_56af7"]
+radius = 6.0
+height = 18.0
+
+[node name="strengthpot" type="Area2D" unique_id=1150012359]
+collision_mask = 2
+script = ExtResource("1_41786")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1961380927]
+sprite_frames = SubResource("SpriteFrames_sghoa")
+autoplay = "default"
+frame_progress = 0.52794415
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1301881278]
+shape = SubResource("CapsuleShape2D_56af7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
