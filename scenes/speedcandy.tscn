@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dgsiixl7r48dj"]
+
+[ext_resource type="Script" uid="uid://chfi475hpycf0" path="res://scripts/speedcandy.gd" id="1_mugyc"]
+[ext_resource type="Texture2D" uid="uid://dgrk05pkkrng4" path="res://assests/platformer items - free assets/animated_items.png" id="1_p7hhd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mugyc"]
+atlas = ExtResource("1_p7hhd")
+region = Rect2(0, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ke53"]
+atlas = ExtResource("1_p7hhd")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xs02s"]
+atlas = ExtResource("1_p7hhd")
+region = Rect2(64, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33hss"]
+atlas = ExtResource("1_p7hhd")
+region = Rect2(96, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71erq"]
+atlas = ExtResource("1_p7hhd")
+region = Rect2(128, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sghoa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mugyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ke53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xs02s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33hss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71erq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hhfj6"]
+radius = 7.0
+
+[node name="speedcandy" type="Area2D" unique_id=608320291]
+collision_mask = 2
+script = ExtResource("1_mugyc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=35758273]
+sprite_frames = SubResource("SpriteFrames_sghoa")
+autoplay = "default"
+frame_progress = 0.21783082
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2015657662]
+shape = SubResource("CircleShape2D_hhfj6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
