@@ -27,9 +27,10 @@ position = Vector2(473.5, 53.5)
 shape = SubResource("RectangleShape2D_sghoa")
 
 [node name="windguy" parent="." unique_id=1629842383 instance=ExtResource("2_6ewva")]
-position = Vector2(696, 388)
+position = Vector2(696, 355)
+scale = Vector2(2, 2)
 
-[node name="CharacterBody2D" parent="." unique_id=1047740258 instance=ExtResource("1_mfx43")]
+[node name="player" parent="." unique_id=1047740258 instance=ExtResource("1_mfx43")]
 position = Vector2(-0.33, 0)
 scale = Vector2(0.76, 0.76)
 

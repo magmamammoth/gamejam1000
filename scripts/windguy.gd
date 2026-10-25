@@ -31,10 +31,13 @@ func edge_space():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print("sooo okk")
-	if (body.name == "testplayer"):
+	if (body.name == "player"):
 		print("heyyy")
 		var y_delta = position.y - body.position.y
-		if (y_delta < 30):
+		#print(y_delta)
+		if (y_delta < 150):
 			print("decrease health")
-		if (y_delta > 30):
+			body.queue_free()
+		if (y_delta > 150):
 			print("dead")
+			queue_free()
