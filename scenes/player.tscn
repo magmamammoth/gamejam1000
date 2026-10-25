@@ -7,17 +7,17 @@
 size = Vector2(20, 31.396227)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1047740258]
+scale = Vector2(0.3, 0.3)
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_g2els")
 
 [node name="Player_png" type="Sprite2D" parent="." unique_id=492658294]
-position = Vector2(370, 145.5)
 scale = Vector2(5.1875, 4.96875)
 texture = ExtResource("2_qhqgy")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=40475823]
-position = Vector2(370, 153)
+position = Vector2(-5.9604645e-08, 0)
 scale = Vector2(5.1875, 4.96875)
 shape = SubResource("RectangleShape2D_japs5")

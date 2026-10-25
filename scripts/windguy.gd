@@ -35,9 +35,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		print("heyyy")
 		var y_delta = position.y - body.position.y
 		#print(y_delta)
-		if (y_delta < 150):
+		if (y_delta < 15):
 			print("decrease health")
 			body.queue_free()
-		if (y_delta > 150):
+		if (y_delta > 15):
 			print("dead")
 			queue_free()

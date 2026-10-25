@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -450.0
-@export var max_lean_angle: float = 12.0
+const SPEED = 150.0
+const JUMP_VELOCITY = -390.0
+@export var max_lean_angle: float = 6.0
 @export var lean_speed:float = 10.0
 
 

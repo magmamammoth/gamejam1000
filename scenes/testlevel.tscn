@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dfh3bgnggb0ep" path="res://scenes/player.tscn" id="1_mfx43"]
 [ext_resource type="PackedScene" uid="uid://de0c85rcylfnt" path="res://scenes/windguy.tscn" id="2_6ewva"]
+[ext_resource type="PackedScene" uid="uid://cuhgtjqvfwxa2" path="res://scenes/gamemanager.tscn" id="3_6kl7x"]
 [ext_resource type="PackedScene" uid="uid://b3186cvf5es6i" path="res://scenes/coins.tscn" id="3_jiwm1"]
-[ext_resource type="Script" uid="uid://by8i0won4hytc" path="res://scripts/gamemanager.gd" id="4_6kl7x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sghoa"]
 size = Vector2(1017, 73)
@@ -49,9 +49,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 color = Color(1, 0.2784314, 0.11372549, 1)
 
-[node name="gamemanager" type="Node" parent="." unique_id=1535154078]
+[node name="gamemanager" parent="." unique_id=1177858530 instance=ExtResource("3_6kl7x")]
 unique_name_in_owner = true
-script = ExtResource("4_6kl7x")
 
 [node name="coins" parent="." unique_id=1567734364 instance=ExtResource("3_jiwm1")]
 position = Vector2(462, 397)
